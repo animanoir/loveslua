@@ -1,23 +1,26 @@
 -- To run the game, copy/paste this into a console and hit enter.
 -- "C:\Program Files\LOVE\love.exe" "C:\Users\momom\OneDrive\Documentos\GitHub\loveslua\lovejam"
 
+
+
 function love.load()
+  love.graphics.setDefaultFilter("nearest", "nearest")
   love.window.setMode(960, 600, {
-    borderless=true
+    fullscreen = false,
+    borderless=true,
+    resizable = false,
+    vsync = true
   })
-  imgBackground = love.graphics.newImage( "assets/grid_3d_white.png" )
-  wHeight = love.graphics.getHeight( )
+  IMG_BG = love.graphics.newImage( "assets/grid_3d_white.png" )
+  WINDOW_HEIGHT = love.graphics.getHeight( )
+  WINDOW_WIDTH = love.graphics.getWidth( )
 end
 
-function love.update()
+function love.update(dt)
+
 end
 
 function love.draw()
-  love.graphics.draw(imgBackground, 0, 0)
-  love.graphics.push()
-    love.graphics.origin(love.mouse.getX(), 100)
-    love.graphics.rectangle( "line", love.mouse.getX(), wHeight/1.5, 100, 100, 100, 100, 100 )
-  love.graphics.pop()
 
 end
 
